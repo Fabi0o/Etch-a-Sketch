@@ -1,0 +1,18 @@
+.grid {
+  position: relative;
+  top: 30px;
+  outline: 2px solid #000;
+  font-size: 0;
+  margin: auto;
+  height: 500px;
+  width: 500px;
+  padding: 0;
+  border: none;
+}
+.gridCell {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: 1px solid #000;
+  display: inline-block;
+}
