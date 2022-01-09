@@ -8,8 +8,8 @@ function createGrid(cellsBySide) {
     cell.classList.add("gridCell");
     cell.style.width = `${widthAndHeight}px`;
     cell.style.height = `${widthAndHeight}px`;
-    addColoring();
   }
+  addColoring();
 }
 createGrid(16);
 //makes drawing efect
@@ -24,13 +24,18 @@ function addColoring() {
 //clears the grid and creates new with the prompted size
 function resetAndCreateNewGrid() {
   const clearButton = document.querySelector(".clear");
-  clearButton.addEventListener("click", () => {
-    const cellsBySide = prompt("How many cells per side?");
-    const cells = document.querySelectorAll(".gridCell");
-    cells.forEach((cell) => {
-      cell.remove();
-    });
-    createGrid(cellsBySide);
+  clearButton.addEventListener("click", function removeGrid() {
+    const userInput = prompt("How many cells per side?");
+    if (userInput > 100) {
+      alert("Max. 100 cells by side!");
+    } else {
+      const cellsBySide = userInput;
+      const cells = document.querySelectorAll(".gridCell");
+      cells.forEach((cell) => {
+        cell.remove();
+      });
+      createGrid(cellsBySide);
+    }
   });
 }
 resetAndCreateNewGrid();
